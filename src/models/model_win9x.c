@@ -64,6 +64,9 @@ uint16_t oplModel_9xFreq(double tone, uint32_t *mul_offset)
 
     *mul_offset = 0;
 
+    if(tone < 0.0)
+        tone = 0.0;
+
     note = (uint_fast32_t)(tone >= 12 ? tone - 12 : tone);
     bendDec = tone - (int)tone; /* 0.0 ± 1.0 - one halftone */
 

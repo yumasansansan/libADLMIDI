@@ -147,6 +147,9 @@ uint16_t oplModel_ailFreq(double tone, uint32_t *mul_offset)
 
     octave += octaveOffset;
 
+    if(octave < 0)
+        octave = 0; /* Don't wrap everything to top! */
+
     while(octave > 7)
     {
         ++(*mul_offset);

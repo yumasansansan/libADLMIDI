@@ -64,6 +64,9 @@ uint16_t oplModel_OConnellFreq(double tone, uint32_t *mul_offset)
 
     *mul_offset = 0;
 
+    if(tone < 0.0)
+        tone = 0.0;
+
     note = (uint_fast32_t)tone;
     bendDec = tone - (int)tone;
 

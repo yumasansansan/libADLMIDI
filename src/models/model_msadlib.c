@@ -108,6 +108,10 @@ uint16_t oplModel_msAdLibFreq(double tone, uint32_t *mul_offset)
     }
 
     note += halfToneoffset;
+
+    if(note < 0)
+        note = 0; /* Don't go below the lowest note! */
+
     freq = s_msAdLibFreqTable[delta][note % 12];
     octave = note / 12;
 

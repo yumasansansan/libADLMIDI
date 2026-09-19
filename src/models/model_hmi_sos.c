@@ -55,7 +55,7 @@ static uint_fast32_t s_hmi_bendtable[12] =
         0 : \
         ( \
             (formula) >= (int32_t)maxVal ? \
-            (int32_t)maxVal : \
+            (int32_t)maxVal - 1 : \
             (formula) \
         )\
     )
